@@ -22,7 +22,7 @@ class _bmiState extends State<bmi> {
           backgroundColor: Colors.grey.shade900,
         ),
         body: Container(
-          margin: EdgeInsets.only(top: 15),
+          margin: EdgeInsets.only(top: 10),
           child: Column(
             children: [
               Row(
@@ -44,7 +44,7 @@ class _bmiState extends State<bmi> {
                               size: 80,
                             ),
                             Text('MALE',style: TextStyle(
-                              color: Colors.grey.shade700
+                              color: Colors.grey.shade500
                             ),)
                           ],
                         ),
@@ -58,7 +58,7 @@ class _bmiState extends State<bmi> {
                       children: [
                         Icon(Icons.female,color: Colors.white,size: 80,),
                         Text('FEMALE',style: TextStyle(
-                          color: Colors.grey.shade700,
+                          color: Colors.grey.shade500,
                         ),)
                       ],
                     ),
@@ -71,21 +71,83 @@ class _bmiState extends State<bmi> {
               ),
 
               Row(
+                //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(width: 10,),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    color: Colors.grey.shade800,
-                    height: 50,
-                    child: Column(
-                      children: [
-                        Text('HEIGHT'),
-                        Text('177'),
-                        Text('cm')
+                  //SizedBox(width: 10,),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          /*border: Border.all(
+                            color: Colors.red,
+                          ),*/
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                        color: Colors.grey.shade800
+                      ),
+                      margin: EdgeInsets.only(top: 20,left: 10,right: 10),
 
-                      ],
+
+                      //color: Colors.grey.shade800,
+                      height: 100,
+                      //width: double.infinity,
+                      child: Column(
+                        //mainAxisAlignment: MainAxisAlignment.center,
+                        //crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text('HEIGHT', style: TextStyle(
+                            color: Colors.grey.shade500,
+
+                          ),),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('177',style: TextStyle(color: Colors.white,
+                              fontSize: 50,
+                                fontWeight: FontWeight.bold
+                              ),),
+                              Text('cm',style: TextStyle(
+                                color: Colors.white
+                              ),)
+                            ],
+                          ),
+
+
+                        ],
+                      ),
                     ),
                   ),
+                ],
+              ),
+
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade800,
+                      borderRadius: BorderRadius.circular(5)
+                    ),
+                    child: Column(
+                      children: [
+                        Text('WEIGHT',style: TextStyle(
+                          color: Colors.grey.shade500,
+
+                        ),),
+                        Text('87',
+                        style: TextStyle(color: Colors.white, fontSize: 50 , fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          children: [
+                            TextButton(onPressed: (){ print('low');}, child: Icon(Icons.phishing)),
+                            TextButton(onPressed: (){ print('high');}, child: Icon(Icons.add_circle_rounded,size: 50,  ),
+                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white) , shape: MaterialStateProperty.all(CircleBorder()),),
+
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
                 ],
               )
             ],
