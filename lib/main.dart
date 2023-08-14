@@ -48,7 +48,7 @@ class _bmiState extends State<bmi> {
                             ),)
                           ],
                         ),
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade800)),
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade800),),
                     ),
                   ),
                   SizedBox(width: 20,),
@@ -88,7 +88,7 @@ class _bmiState extends State<bmi> {
 
 
                       //color: Colors.grey.shade800,
-                      height: 100,
+                      height: 150,
                       //width: double.infinity,
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.center,
@@ -99,6 +99,7 @@ class _bmiState extends State<bmi> {
 
                           ),),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('177',style: TextStyle(color: Colors.white,
@@ -121,33 +122,77 @@ class _bmiState extends State<bmi> {
 
               Row(
                 children: [
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade800,
-                      borderRadius: BorderRadius.circular(5)
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 20,left: 10),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade800,
+                        borderRadius: BorderRadius.circular(5)
+                      ),
+                      child: Column(
+                        children: [
+                          Text('WEIGHT',style: TextStyle(
+                            color: Colors.grey.shade500,
+
+                          ),),
+                          Text('87',
+                          style: TextStyle(color: Colors.white, fontSize: 50 , fontWeight: FontWeight.bold),
+                          ),
+                          Row(
+                            children: [
+                              TextButton(onPressed: (){ print('low');}, child: Icon(
+                                  const IconData(0xe15b, fontFamily: 'MaterialIcons'),
+                                  color: Colors.black),
+                                //backgroundColor: Colors.white,
+                              ),
+                              TextButton(onPressed: (){ print('high');}, child: Icon(Icons.add_rounded ,size: 37, color: Colors.white, ),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade700) , shape: MaterialStateProperty.all(CircleBorder()),),
+
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                    child: Column(
-                      children: [
-                        Text('WEIGHT',style: TextStyle(
-                          color: Colors.grey.shade500,
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(left: 20, top: 20,right: 10),
+                      
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade800,
+                        borderRadius: BorderRadius.circular(5),
+                        
 
-                        ),),
-                        Text('87',
-                        style: TextStyle(color: Colors.white, fontSize: 50 , fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          children: [
-                            TextButton(onPressed: (){ print('low');}, child: Icon(Icons.phishing)),
-                            TextButton(onPressed: (){ print('high');}, child: Icon(Icons.add_circle_rounded,size: 50,  ),
-                            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white) , shape: MaterialStateProperty.all(CircleBorder()),),
-
-                            )
-                          ],
-                        )
-                      ],
+                      ),
+                      padding: EdgeInsets.all(5),
+                      //color: Colors.grey.shade800,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text('AGE', style: TextStyle(color: Colors.grey),),
+                          Text('21',style: TextStyle(color: Colors.white, fontSize: 50 , fontWeight: FontWeight.bold) , ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            //crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              TextButton(onPressed: (){print('minus');}, child: Icon(Icons.add, color: Colors.white,size: 35) ,
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade700),shape: MaterialStateProperty.all(CircleBorder())),),
+                              TextButton(onPressed: (){print('plus');}, child: Icon(Icons.add, color: Colors.white, size: 35,),
+                              style: ButtonStyle( backgroundColor: MaterialStateProperty.all(Colors.grey.shade700),shape: MaterialStateProperty.all(CircleBorder())),)
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   )
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  TextButton(onPressed: (){print('calculate' );}, child: Text('CALCULATE', style: TextStyle(color: Colors.white),),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red),),),
                 ],
               )
             ],
