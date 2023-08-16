@@ -16,10 +16,10 @@ class _bmiState extends State<bmi> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Color(0xFF0A0D22),
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
-          backgroundColor: Colors.grey.shade900,
+          backgroundColor: Color(0xFF0A0D22),
         ),
         body: Container(
           margin: EdgeInsets.only(top: 10),
@@ -44,11 +44,11 @@ class _bmiState extends State<bmi> {
                               size: 80,
                             ),
                             Text('MALE',style: TextStyle(
-                              color: Colors.grey.shade500
+                              color: Color(0xFF70727E)
                             ),)
                           ],
                         ),
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade800),),
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF1D1F33)),),
                     ),
                   ),
                   SizedBox(width: 20,),
@@ -58,11 +58,11 @@ class _bmiState extends State<bmi> {
                       children: [
                         Icon(Icons.female,color: Colors.white,size: 80,),
                         Text('FEMALE',style: TextStyle(
-                          color: Colors.grey.shade500,
+                          color: Color(0xFF70727E),
                         ),)
                       ],
                     ),
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade800)),
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF1D1F33))),
                     ),
                   ),
                   SizedBox(width: 10,)
@@ -82,7 +82,7 @@ class _bmiState extends State<bmi> {
                             color: Colors.red,
                           ),*/
                           borderRadius: BorderRadius.all(Radius.circular(5)),
-                        color: Colors.grey.shade800
+                        color: Color(0xFF111428)
                       ),
                       margin: EdgeInsets.only(top: 20,left: 10,right: 10),
 
@@ -95,7 +95,7 @@ class _bmiState extends State<bmi> {
                         //crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text('HEIGHT', style: TextStyle(
-                            color: Colors.grey.shade500,
+                            color: Color(0xFF70727E),
 
                           ),),
                           Row(
@@ -107,7 +107,7 @@ class _bmiState extends State<bmi> {
                                 fontWeight: FontWeight.bold
                               ),),
                               Text('cm',style: TextStyle(
-                                color: Colors.white
+                                color: Color(0xFF70727E)
                               ),)
                             ],
                           ),
@@ -127,13 +127,13 @@ class _bmiState extends State<bmi> {
                       margin: EdgeInsets.only(top: 20,left: 10),
                       padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
+                        color: Color(0xFF111428),
                         borderRadius: BorderRadius.circular(5)
                       ),
                       child: Column(
                         children: [
                           Text('WEIGHT',style: TextStyle(
-                            color: Colors.grey.shade500,
+                            color: Color(0xFF70727E),
 
                           ),),
                           Text('87',
@@ -147,7 +147,7 @@ class _bmiState extends State<bmi> {
                                 //backgroundColor: Colors.white,
                               ),
                               TextButton(onPressed: (){ print('high');}, child: Icon(Icons.add_rounded ,size: 37, color: Colors.white, ),
-                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade700) , shape: MaterialStateProperty.all(CircleBorder()),),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF1C1F32)) , shape: MaterialStateProperty.all(CircleBorder()),),
 
                               )
                             ],
@@ -161,7 +161,7 @@ class _bmiState extends State<bmi> {
                       margin: EdgeInsets.only(left: 20, top: 20,right: 10),
                       
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
+                        color: Color(0xFF111428),
                         borderRadius: BorderRadius.circular(5),
                         
 
@@ -171,16 +171,16 @@ class _bmiState extends State<bmi> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('AGE', style: TextStyle(color: Colors.grey),),
+                          Text('AGE', style: TextStyle(color: Color(0xFF70727E)),),
                           Text('21',style: TextStyle(color: Colors.white, fontSize: 50 , fontWeight: FontWeight.bold) , ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             //crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               TextButton(onPressed: (){print('minus');}, child: Icon(Icons.add, color: Colors.white,size: 35) ,
-                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey.shade700),shape: MaterialStateProperty.all(CircleBorder())),),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF1C1F32)),shape: MaterialStateProperty.all(CircleBorder())),),
                               TextButton(onPressed: (){print('plus');}, child: Icon(Icons.add, color: Colors.white, size: 35,),
-                              style: ButtonStyle( backgroundColor: MaterialStateProperty.all(Colors.grey.shade700),shape: MaterialStateProperty.all(CircleBorder())),)
+                              style: ButtonStyle( backgroundColor: MaterialStateProperty.all(Color(0xFF1C1F32)),shape: MaterialStateProperty.all(CircleBorder())),)
                             ],
                           )
                         ],
@@ -189,10 +189,14 @@ class _bmiState extends State<bmi> {
                   )
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
               Column(
+
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  TextButton(onPressed: (){print('calculate' );}, child: Text('CALCULATE', style: TextStyle(color: Colors.white),),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red),),),
+                  TextButton(onPressed: (){print('calculate' );}, child: Text('CALCULATE', style: TextStyle(color: Colors.white),),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFFEB1555)),),),
                 ],
               )
             ],
