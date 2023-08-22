@@ -15,11 +15,17 @@ class _bmiState extends State<bmi> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Color(0xFF0A0D22),
+        appBarTheme: AppBarTheme( backgroundColor: Color(0xFF0A0D22)),
+        scaffoldBackgroundColor: Color(0xFF0A0D22)
+      ),
+      //theme:ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: Color(0xFF0A0D22),
+       // backgroundColor: Color(0xFF0A0D22),
         appBar: AppBar(
           title: Text('BMI CALCULATOR'),
-          backgroundColor: Color(0xFF0A0D22),
+          //backgroundColor: Color(0xFF0A0D22),
         ),
         body: Container(
           margin: EdgeInsets.only(top: 10),
