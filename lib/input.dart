@@ -8,6 +8,25 @@ class inputfile extends StatefulWidget {
 }
 
 class _inputfileState extends State<inputfile> {
+  Expanded struc() {
+    return Expanded(
+        child: Container(
+      margin: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Color(0xFF1D1F33)),
+    ));
+  }
+
+  Expanded rowstruc() {
+    return Expanded(
+        child: Row(
+      children: [
+        struc(),
+        struc(),
+      ],
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,68 +36,7 @@ class _inputfileState extends State<inputfile> {
         //backgroundColor: Color(0xFF0A0D22),
       ),
       body: Column(
-        children: [
-          Expanded(
-              child: Row(
-            children: [
-              Expanded(
-                  child: Container(
-                margin: EdgeInsets.all(15),
-
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFF1D1F33)
-                ),
-              ),),
-
-              Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15),
-
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF1D1F33)
-                    ),
-                  )),
-
-            ],
-          )),
-          Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15),
-
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFF1D1F33)
-                ),
-              )),
-          Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15),
-
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xFF1D1F33)
-                      ),
-                    ),),
-
-                  Expanded(
-                      child: Container(
-                        margin: EdgeInsets.all(15),
-
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xFF1D1F33)
-                        ),
-                      )),
-
-                ],
-              )),
-
-        ],
+        children: [rowstruc(), struc(), rowstruc()],
       ),
     );
   }
