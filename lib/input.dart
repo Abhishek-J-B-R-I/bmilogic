@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container.dart';
 import 'icono.dart';
+
 const bottomcontainerheight = 80.0;
 const topcontainercolor = Color(0xFF01D1F33);
 const center_container_color = Color(0xFF111428);
 const last_second_container_color = Color(0xFF111428);
 const bottom_container_color = Color(0xFFEB1555);
+const activecolor= Colors.red;
 
 class inputfile extends StatefulWidget {
   const inputfile({super.key});
@@ -16,17 +18,52 @@ class inputfile extends StatefulWidget {
 }
 
 class _inputfileState extends State<inputfile> {
-  Expanded struc({required Color C, required Widget chi}) {
-    return Expanded(child: container(C, chi));
+
+
+  Color maleinactivecolor= topcontainercolor;
+  Color femaleinactivecolor = topcontainercolor;
+//1=male , 2=female
+void changeactivo(int gender){
+  if(gender==1){
+    if(maleinactivecolor==topcontainercolor){
+      femaleinactivecolor=topcontainercolor;
+      maleinactivecolor=activecolor;
+    }
+    else{
+      maleinactivecolor=topcontainercolor;
+
+    }
+  }
+  else{
+    if(femaleinactivecolor==topcontainercolor){
+      maleinactivecolor=topcontainercolor;
+      femaleinactivecolor=activecolor;
+    }
+    else{
+      femaleinactivecolor=topcontainercolor;
+    }
+  }
+}
+
+  Expanded struc({required Color C, required Widget chi, int? gg}) {
+    return Expanded(child: GestureDetector(onTap: (){
+
+      print('yo');
+      //struc(C: activecolors, chi: chi);
+      setState(() {
+        print('okay');
+        changeactivo(gg!);
+      });
+    },child: container(C, chi)));
   }
 
   Expanded rowstruc(
-      {required Color r, required Widget ch, required Widget ch2}) {
+      { int? gm,int? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
     return Expanded(
         child: Row(
       children: [
-        struc(C: r, chi: ch),
-        struc(C: r, chi: ch2),
+        struc(C: r, chi: ch,gg: gm),
+        struc(C: l, chi: ch2, gg: gf),
       ],
     ));
   }
@@ -68,22 +105,17 @@ class _inputfileState extends State<inputfile> {
       body: Column(
         children: [
           rowstruc(
-              r: topcontainercolor,
+              r: maleinactivecolor,l:femaleinactivecolor,gm: 1,gf: 2,
               ch: icono(iconoo: FontAwesomeIcons.mars, label: 'MALE'),
               ch2: icono(iconoo: FontAwesomeIcons.venus, label: 'Female')),
           struc(
-              C: center_container_color,
-              chi: Column(
-                children: [Text('yo')],
-              )),
-          rowstruc(
-              r: last_second_container_color,
-              ch: Column(
-                children: [],
-              ),
-              ch2: Column(
-                children: [],
-              )),
+            C: center_container_color,
+            chi: Column(
+              children: [Text('       ')],
+            ),
+          ),
+
+          rowstruc(r: last_second_container_color,l: last_second_container_color, ch: Column(), ch2: Column()),
           Container(
             color: bottom_container_color,
             margin: EdgeInsets.only(top: 10),
