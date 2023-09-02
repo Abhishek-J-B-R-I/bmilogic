@@ -8,8 +8,10 @@ const topcontainercolor = Color(0xFF01D1F33);
 const center_container_color = Color(0xFF111428);
 const last_second_container_color = Color(0xFF111428);
 const bottom_container_color = Color(0xFFEB1555);
-const activecolor= Colors.red;
-
+const activecolor= Color(0xFF04040E);
+enum genderr{
+ male, female
+}
 class inputfile extends StatefulWidget {
   const inputfile({super.key});
 
@@ -22,9 +24,12 @@ class _inputfileState extends State<inputfile> {
 
   Color maleinactivecolor= topcontainercolor;
   Color femaleinactivecolor = topcontainercolor;
-//1=male , 2=female
-void changeactivo(int gender){
-  if(gender==1){
+
+
+  //1=male , 2=female
+
+void changeactivo(genderr gender){
+  if(gender==genderr.male){
     if(maleinactivecolor==topcontainercolor){
       femaleinactivecolor=topcontainercolor;
       maleinactivecolor=activecolor;
@@ -45,7 +50,7 @@ void changeactivo(int gender){
   }
 }
 
-  Expanded struc({required Color C, required Widget chi, int? gg}) {
+  Expanded struc({required Color C, required Widget chi, genderr? gg}) {
     return Expanded(child: GestureDetector(onTap: (){
 
       print('yo');
@@ -58,7 +63,7 @@ void changeactivo(int gender){
   }
 
   Expanded rowstruc(
-      { int? gm,int? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
+      { genderr? gm,genderr? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
     return Expanded(
         child: Row(
       children: [
@@ -105,7 +110,7 @@ void changeactivo(int gender){
       body: Column(
         children: [
           rowstruc(
-              r: maleinactivecolor,l:femaleinactivecolor,gm: 1,gf: 2,
+              r: maleinactivecolor,l:femaleinactivecolor,gm: genderr.male,gf: genderr.female,
               ch: icono(iconoo: FontAwesomeIcons.mars, label: 'MALE'),
               ch2: icono(iconoo: FontAwesomeIcons.venus, label: 'Female')),
           struc(
