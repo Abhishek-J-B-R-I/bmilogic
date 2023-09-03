@@ -21,34 +21,42 @@ class inputfile extends StatefulWidget {
 
 class _inputfileState extends State<inputfile> {
 
-
-  Color maleinactivecolor= topcontainercolor;
-  Color femaleinactivecolor = topcontainercolor;
+ genderr? selectgender;
+  //Color maleinactivecolor= topcontainercolor;
+  //Color femaleinactivecolor = topcontainercolor;
 
 
   //1=male , 2=female
-
+/*
 void changeactivo(genderr gender){
-  if(gender==genderr.male){
-    if(maleinactivecolor==topcontainercolor){
+  /*if(gender==genderr.male){
+    /*if(maleinactivecolor==topcontainercolor){
       femaleinactivecolor=topcontainercolor;
       maleinactivecolor=activecolor;
     }
     else{
       maleinactivecolor=topcontainercolor;
 
-    }
+    }*/
+
+    maleinactivecolor==topcontainercolor ? (femaleinactivecolor=topcontainercolor,maleinactivecolor=activecolor) : maleinactivecolor=topcontainercolor;
   }
   else{
-    if(femaleinactivecolor==topcontainercolor){
+    /*if(femaleinactivecolor==topcontainercolor){
       maleinactivecolor=topcontainercolor;
       femaleinactivecolor=activecolor;
     }
     else{
       femaleinactivecolor=topcontainercolor;
-    }
-  }
-}
+    }*/
+
+    femaleinactivecolor==topcontainercolor ? (maleinactivecolor=topcontainercolor,femaleinactivecolor=activecolor) : (femaleinactivecolor=topcontainercolor);
+  }*/
+  //Color tr = maleinactivecolor==topcontainercolor ? (femaleinactivecolor=topcontainercolor,maleinactivecolor=activecolor) : (maleinactivecolor=topcontainercolor);
+
+  //gender==genderr.male?():( femaleinactivecolor==topcontainercolor ? (maleinactivecolor=topcontainercolor,femaleinactivecolor=activecolor) : (femaleinactivecolor=topcontainercolor);
+  );
+}*/
 
   Expanded struc({required Color C, required Widget chi, genderr? gg}) {
     return Expanded(child: GestureDetector(onTap: (){
@@ -57,13 +65,15 @@ void changeactivo(genderr gender){
       //struc(C: activecolors, chi: chi);
       setState(() {
         print('okay');
-        changeactivo(gg!);
+        //changeactivo(gg!);
+        selectgender = gg!;
+
       });
     },child: container(C, chi)));
   }
 
   Expanded rowstruc(
-      { genderr? gm,genderr? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
+      {  genderr? gm,genderr? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
     return Expanded(
         child: Row(
       children: [
@@ -110,7 +120,7 @@ void changeactivo(genderr gender){
       body: Column(
         children: [
           rowstruc(
-              r: maleinactivecolor,l:femaleinactivecolor,gm: genderr.male,gf: genderr.female,
+              r: selectgender==genderr.male?activecolor:topcontainercolor,l:selectgender==genderr.female?activecolor:topcontainercolor,gm: genderr.male,gf: genderr.female,
               ch: icono(iconoo: FontAwesomeIcons.mars, label: 'MALE'),
               ch2: icono(iconoo: FontAwesomeIcons.venus, label: 'Female')),
           struc(
