@@ -58,7 +58,7 @@ void changeactivo(genderr gender){
   );
 }*/
 
-  Expanded struc({required Color C, required Widget chi, genderr? gg}) {
+  Expanded struc({ required Color C, required Widget chi, genderr? gg}) {
     return Expanded(child: GestureDetector(onTap: (){
 
       print('yo');
@@ -73,12 +73,12 @@ void changeactivo(genderr gender){
   }
 
   Expanded rowstruc(
-      {  genderr? gm,genderr? gf,required Color r,required Color l, required Widget ch, required Widget ch2}) {
+      {  genderr? gm,genderr? gf, Color? r, Color? l,  Widget? ch,  Widget? ch2}) {
     return Expanded(
         child: Row(
       children: [
-        struc(C: r, chi: ch,gg: gm),
-        struc(C: l, chi: ch2, gg: gf),
+        struc(C: r!, chi: ch!,gg: gm),
+        struc(C: l!, chi: ch2!, gg: gf),
       ],
     ));
   }
@@ -125,9 +125,10 @@ void changeactivo(genderr gender){
               ch2: icono(iconoo: FontAwesomeIcons.venus, label: 'Female')),
           struc(
             C: center_container_color,
-            chi: Column(
-              children: [Text('       ')],
-            ),
+            chi: Row(
+              children: [],
+            )
+
           ),
 
           rowstruc(r: last_second_container_color,l: last_second_container_color, ch: Column(), ch2: Column()),
