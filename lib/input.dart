@@ -59,17 +59,13 @@ void changeactivo(genderr gender){
 }*/
 
   Expanded struc({ required Color C, required Widget chi, genderr? gg}) {
-    return Expanded(child: GestureDetector(onTap: (){
+    return Expanded(child: container(C, chi, (){
 
-      print('yo');
-      //struc(C: activecolors, chi: chi);
       setState(() {
-        print('okay');
-        //changeactivo(gg!);
-        selectgender = gg!;
-
+        selectgender=gg!;
       });
-    },child: container(C, chi)));
+
+    }));
   }
 
   Expanded rowstruc(
