@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'contant_file.dart';
 class icono extends StatelessWidget {
   icono({required this.iconoo, required this.label});
   final IconData iconoo;
@@ -22,11 +22,7 @@ class icono extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(
-            color: Color(0xFF8E8F99),
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style:label_text_style,
         )
       ],
     );
