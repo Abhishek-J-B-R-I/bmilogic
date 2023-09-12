@@ -10,3 +10,10 @@ const label_text_style= TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.bold,
 );
+
+const height_value=TextStyle(
+    fontSize: 50,
+    color: Colors.white,
+    //fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w900
+);

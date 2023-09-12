@@ -116,8 +116,20 @@ void changeactivo(genderr gender){
               ch2: icono(iconoo: FontAwesomeIcons.venus, label: 'Female')),
           struc(
             C: center_container_color,
-            chi: Row(
-              children: [],
+            chi: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('HEIGHT',style: label_text_style,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text('186',style: height_value,),
+                    Text('cm',style: label_text_style,)
+                  ],
+                )
+              ],
             )
 
           ),
