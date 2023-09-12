@@ -7,6 +7,7 @@ import 'contant_file.dart';
 enum genderr{
  male, female
 }
+int height_value_for_slider=186;
 class inputfile extends StatefulWidget {
   const inputfile({super.key});
 
@@ -125,9 +126,19 @@ void changeactivo(genderr gender){
                   crossAxisAlignment: CrossAxisAlignment.baseline,
                   textBaseline: TextBaseline.alphabetic,
                   children: [
-                    Text('186',style: height_value,),
+                    Text(height_value_for_slider.toString(),style: height_value,),
                     Text('cm',style: label_text_style,)
                   ],
+                ),
+                Slider(value: height_value_for_slider.toDouble(),max: 220.0,min: 120.0, onChanged: (double newValue) {
+                  setState(() {
+                   height_value_for_slider=newValue.round();
+                    print(newValue);
+                  });
+                },
+                  activeColor: height_slider_active_color,
+                  inactiveColor: height_slider_inactive_color,
+
                 )
               ],
             )
