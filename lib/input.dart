@@ -7,6 +7,7 @@ import 'contant_file.dart';
 enum genderr { male, female }
 
 int height_value_for_slider = 186;
+int weight_value=60;
 
 class inputfile extends StatefulWidget {
   const inputfile({super.key});
@@ -51,6 +52,26 @@ void changeactivo(genderr gender){
   //gender==genderr.male?():( femaleinactivecolor==topcontainercolor ? (maleinactivecolor=topcontainercolor,femaleinactivecolor=activecolor) : (femaleinactivecolor=topcontainercolor);
   );
 }*/
+  Column bottomwidget(String t, int v){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(t, style: label_text_style,),
+        Text(v.toString(),style: height_value,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            myfloatingbutton(myicon: FontAwesomeIcons.plus),
+            SizedBox(
+              width: 10,
+            ),
+            myfloatingbutton(myicon: FontAwesomeIcons.minus,)
+          ],
+        ),
+
+      ],
+    );
+  }
 
   Expanded struc({required Color C, required Widget chi, genderr? gg}) {
     return Expanded(
@@ -176,8 +197,25 @@ activeTrackColor: Colors.white,
           rowstruc(
               r: last_second_container_color,
               l: last_second_container_color,
-              ch: Column(),
-              ch2: Column()),
+              ch: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("WEIGHT", style: label_text_style,),
+                  Text(weight_value.toString(),style: height_value,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      myfloatingbutton(myicon: FontAwesomeIcons.plus),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      myfloatingbutton(myicon: FontAwesomeIcons.minus,)
+                    ],
+                  ),
+
+                ],
+              ),
+              ch2: bottomwidget("AGE", 19)),
           Container(
             color: bottom_container_color,
             margin: EdgeInsets.only(top: 10),
@@ -186,6 +224,26 @@ activeTrackColor: Colors.white,
           )
         ],
       ),
+    );
+  }
+}
+
+class myfloatingbutton extends StatelessWidget {
+  myfloatingbutton({this.myicon});
+  final myicon;
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(onPressed: (){},
+      fillColor: Color(0xFF1C1F32),
+      shape: CircleBorder(),
+constraints: BoxConstraints.tightFor(
+  width: 56.0,
+  height: 56.0,
+
+),
+      elevation: 0.0,
+child:Icon(myicon,color: Colors.white,),
     );
   }
 }
