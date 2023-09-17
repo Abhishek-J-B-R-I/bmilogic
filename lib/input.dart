@@ -8,6 +8,7 @@ enum genderr { male, female }
 
 int height_value_for_slider = 186;
 int weight_value=60;
+int age_value=19;
 
 class inputfile extends StatefulWidget {
   const inputfile({super.key});
@@ -61,11 +62,19 @@ void changeactivo(genderr gender){
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            myfloatingbutton(myicon: FontAwesomeIcons.plus),
+            myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
+              setState(() {
+                age_value++;
+              });
+            },),
             SizedBox(
               width: 10,
             ),
-            myfloatingbutton(myicon: FontAwesomeIcons.minus,)
+            myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
+              setState(() {
+                age_value--;
+              });
+            },)
           ],
         ),
 
@@ -205,17 +214,27 @@ activeTrackColor: Colors.white,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      myfloatingbutton(myicon: FontAwesomeIcons.plus),
+                      myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
+                        setState(() {
+                          weight_value++;
+                        });
+                      }),
                       SizedBox(
                         width: 10,
                       ),
-                      myfloatingbutton(myicon: FontAwesomeIcons.minus,)
+                      myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
+                        setState(() {
+
+                          weight_value--;
+
+                        });
+                      },)
                     ],
                   ),
 
                 ],
               ),
-              ch2: bottomwidget("AGE", 19)),
+              ch2: bottomwidget("AGE", age_value)),
           Container(
             color: bottom_container_color,
             margin: EdgeInsets.only(top: 10),
@@ -229,12 +248,13 @@ activeTrackColor: Colors.white,
 }
 
 class myfloatingbutton extends StatelessWidget {
-  myfloatingbutton({this.myicon});
+  myfloatingbutton({this.myicon,required this.onpressed});
   final myicon;
+  final void Function() onpressed;
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(onPressed: (){},
+    return RawMaterialButton(onPressed: onpressed,
       fillColor: Color(0xFF1C1F32),
       shape: CircleBorder(),
 constraints: BoxConstraints.tightFor(
