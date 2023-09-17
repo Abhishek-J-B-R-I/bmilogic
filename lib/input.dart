@@ -64,7 +64,12 @@ void changeactivo(genderr gender){
           children: [
             myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
               setState(() {
+                if(t=='AGE'){
                 age_value++;
+                }
+                else if(t=='WEIGHT'){
+                  weight_value++;
+                }
               });
             },),
             SizedBox(
@@ -72,7 +77,12 @@ void changeactivo(genderr gender){
             ),
             myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
               setState(() {
-                age_value--;
+                if(t=='AGE') {
+                  age_value--;
+                }
+                else if(t=='WEIGHT'){
+                  weight_value--;
+                }
               });
             },)
           ],
@@ -206,7 +216,7 @@ activeTrackColor: Colors.white,
           rowstruc(
               r: last_second_container_color,
               l: last_second_container_color,
-              ch: Column(
+              ch: /*Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("WEIGHT", style: label_text_style,),
@@ -233,7 +243,8 @@ activeTrackColor: Colors.white,
                   ),
 
                 ],
-              ),
+              )*/
+              bottomwidget('WEIGHT', weight_value),
               ch2: bottomwidget("AGE", age_value)),
           Container(
             color: bottom_container_color,
