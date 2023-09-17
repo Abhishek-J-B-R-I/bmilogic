@@ -64,12 +64,13 @@ void changeactivo(genderr gender){
           children: [
             myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
               setState(() {
-                if(t=='AGE'){
+                /*if(t=='AGE'){
                 age_value++;
                 }
                 else if(t=='WEIGHT'){
                   weight_value++;
-                }
+                }*/
+                t=='AGE'? age_value++: weight_value++;
               });
             },),
             SizedBox(
@@ -77,12 +78,13 @@ void changeactivo(genderr gender){
             ),
             myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
               setState(() {
-                if(t=='AGE') {
+                /*if(t=='AGE') {
                   age_value--;
                 }
                 else if(t=='WEIGHT'){
                   weight_value--;
-                }
+                }*/
+                t=='AGE'?age_value-- : weight_value--;
               });
             },)
           ],
