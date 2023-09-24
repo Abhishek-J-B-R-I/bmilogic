@@ -28,3 +28,8 @@ const result_bottom_text_styel=TextStyle(
   fontSize: 22,
 
 );
+
+const save_history_style= TextStyle(
+  color: Color(0xFFDDDDE0),
+
+);
