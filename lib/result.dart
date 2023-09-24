@@ -30,7 +30,7 @@ class _resultState extends State<result> {
               Text("Normal BMI range:", style: TextStyle(color: Color(0xFF848590), fontSize: 20),),
               Text("18,5 -25 kg/m2",style: result_bottom_text_styel,),
               Text("You have a normal body weight. Goods job!",textAlign: TextAlign.center,style: result_bottom_text_styel,),
-              TextButton(onPressed: (){}, child: Text("SAVE RESULT", style: TextStyle(color: Color(0xFFFFFFFF) ),), style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF181A2E)), padding: MaterialStateProperty.all(EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20)),),),
+              TextButton(onPressed: (){}, child: Text("SAVE RESULT", style: TextStyle(color: Color(0xFFFFFFFF) , fontSize: 15),), style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF181A2E)), padding: MaterialStateProperty.all(EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20)),),),
 
             ],
           ),(){}),),button_bottom(text: "RE-CALCULATE YOUR BMI", onpre: (){
