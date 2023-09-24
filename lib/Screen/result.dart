@@ -21,7 +21,7 @@ class _resultState extends State<result> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(child: Container(margin: EdgeInsets.all(20),child: Text('Your Result',style: result_title,),)),
+          Expanded(child: Container(margin: EdgeInsets.all(15),alignment: Alignment.bottomLeft,child: Text('Your Result',style: result_title,),)),
           Expanded(flex: 5,child: container( Color(0xFF1D1F33), Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
