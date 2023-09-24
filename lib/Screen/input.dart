@@ -7,6 +7,7 @@ import '../Components/icono.dart';
 import '../Components/contant_file.dart';
 import '../Components/bottom_button.dart';
 import 'result.dart';
+import 'package:bmi/logic/logic.dart';
 //import 'package:bmiviaangila/lib/Screen/result.dart';
 enum genderr { male, female }
 
@@ -143,7 +144,7 @@ void changeactivo(genderr gender){
       ],
     );
   }*/
-
+//bmilogic bl=new bmilogic();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -219,41 +220,45 @@ activeTrackColor: Colors.white,
                   )
                 ],
               )),
-          rowstruc(
-              r: last_second_container_color,
-              l: last_second_container_color,
-              ch: /*Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("WEIGHT", style: label_text_style,),
-                  Text(weight_value.toString(),style: height_value,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
-                        setState(() {
-                          weight_value++;
-                        });
-                      }),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
-                        setState(() {
+          Center(
+            child: rowstruc(
+                r: last_second_container_color,
+                l: last_second_container_color,
+                ch: /*Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("WEIGHT", style: label_text_style,),
+                    Text(weight_value.toString(),style: height_value,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        myfloatingbutton(myicon: FontAwesomeIcons.plus,onpressed: (){
+                          setState(() {
+                            weight_value++;
+                          });
+                        }),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        myfloatingbutton(myicon: FontAwesomeIcons.minus,onpressed: (){
+                          setState(() {
 
-                          weight_value--;
+                            weight_value--;
 
-                        });
-                      },)
-                    ],
-                  ),
+                          });
+                        },)
+                      ],
+                    ),
 
-                ],
-              )*/
-              bottomwidget('WEIGHT', weight_value),
-              ch2: bottomwidget("AGE", age_value)),
+                  ],
+                )*/
+                bottomwidget('WEIGHT', weight_value),
+                ch2: bottomwidget("AGE", age_value)),
+          ),
           button_bottom(text: "CALCULATE YOUR BMI",onpre: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>result()));
+           // bl.trycode();
+            bmilogic ress =new bmilogic( height: height_value_for_slider.toDouble(),weight:  weight_value.toDouble());
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>result(bmic: ress.bmicalculatenow(), bmis: ress.youare(), bmi_message: ress.messages(),)));
           })
         ],
       ),
