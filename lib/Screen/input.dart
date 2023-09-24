@@ -1,12 +1,13 @@
-import 'package:bmi/result.dart';
+import 'package:bmi/Screen/result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'container.dart';
-import 'icono.dart';
-import 'contant_file.dart';
-import 'bottom_button.dart';
+import '../Components/container.dart';
+import '../Components/icono.dart';
+//import '../contant_file.dart';
+import '../Components/contant_file.dart';
+import '../Components/bottom_button.dart';
 import 'result.dart';
-
+//import 'package:bmiviaangila/lib/Screen/result.dart';
 enum genderr { male, female }
 
 int height_value_for_slider = 186;

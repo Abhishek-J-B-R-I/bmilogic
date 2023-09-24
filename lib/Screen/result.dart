@@ -1,7 +1,7 @@
-import 'package:bmi/bottom_button.dart';
+import 'package:bmi/Components/bottom_button.dart';
 import 'package:flutter/material.dart';
-import 'container.dart';
-import 'contant_file.dart';
+import '../Components/container.dart';
+import '../Components/contant_file.dart';
 class result extends StatefulWidget {
   const result({super.key});
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'contant_file.dart';
-import 'result.dart';
+import '../Screen/result.dart';
 class button_bottom extends StatelessWidget {
 button_bottom({required this.text, required this.onpre });
 final String text;
