@@ -23,13 +23,14 @@ class _resultState extends State<result> {
         children: [
           Expanded(child: Container(margin: EdgeInsets.all(20),child: Text('Your Result',style: result_title,),)),
           Expanded(flex: 5,child: container( Color(0xFF1D1F33), Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("Normal"),
-              Text("22.1"),
-              Text("Normal BMI range:"),
-              Text("18,5 -25 kg/m2"),
-              Text("You have a normal body weight. Goods job!"),
-              TextButton(onPressed: (){}, child: Text("SAVE RESULT")),
+              Text("NORMAL", style: TextStyle(color: Color(0xFF22D775), fontWeight: FontWeight.bold, fontSize: 20),),
+              Text("22.1", style: TextStyle(color: Colors.white, fontSize: 100, fontWeight: FontWeight.bold),),
+              Text("Normal BMI range:", style: TextStyle(color: Color(0xFF848590), fontSize: 20),),
+              Text("18,5 -25 kg/m2",style: result_bottom_text_styel,),
+              Text("You have a normal body weight. Goods job!",textAlign: TextAlign.center,style: result_bottom_text_styel,),
+              TextButton(onPressed: (){}, child: Text("SAVE RESULT", style: TextStyle(color: Color(0xFFFFFFFF) ),), style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFF181A2E)), padding: MaterialStateProperty.all(EdgeInsets.only(left: 40,right: 40,top: 20,bottom: 20)),),),
 
             ],
           ),(){}),),button_bottom(text: "RE-CALCULATE YOUR BMI", onpre: (){

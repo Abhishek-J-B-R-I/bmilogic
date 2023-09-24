@@ -22,3 +22,9 @@ const height_value=TextStyle(
 
 const bottom_button_style= TextStyle(color: Colors.white,fontSize: 20);
 const result_title=TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 45, );
+const result_bottom_text_styel=TextStyle(
+  color: Color(0xFFDDDDE0),
+  fontWeight: FontWeight.bold,
+  fontSize: 22,
+
+);
