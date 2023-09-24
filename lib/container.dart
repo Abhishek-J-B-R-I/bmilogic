@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class container extends StatelessWidget {
-  container(@required this.colour, this.childcare,this.onPress1);
+  container( this.colour, this.childcare,this.onPress1);
   final Color colour;
   final Widget childcare;
-  final void Function() onPress1;
+  final void Function()? onPress1;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

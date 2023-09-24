@@ -1,8 +1,11 @@
+import 'package:bmi/result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container.dart';
 import 'icono.dart';
 import 'contant_file.dart';
+import 'bottom_button.dart';
+import 'result.dart';
 
 enum genderr { male, female }
 
@@ -248,17 +251,16 @@ activeTrackColor: Colors.white,
               )*/
               bottomwidget('WEIGHT', weight_value),
               ch2: bottomwidget("AGE", age_value)),
-          Container(
-            color: bottom_container_color,
-            margin: EdgeInsets.only(top: 10),
-            width: double.infinity,
-            height: bottomcontainerheight,
-          )
+          button_bottom(text: "CALCULATE YOUR BMI",onpre: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>result()));
+          })
         ],
       ),
     );
   }
 }
+
+
 
 class myfloatingbutton extends StatelessWidget {
   myfloatingbutton({this.myicon,required this.onpressed});
